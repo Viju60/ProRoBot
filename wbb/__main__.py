@@ -114,11 +114,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Commands ❓", callback_data="bot_commands"
-            ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                text="Add Me To Your Group 🥰",
+                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             ),
         ],
         [
@@ -127,22 +124,29 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 callback_data="stats_callback",
             ),
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="Pro Owner 🤓", url="http://t.me/ItsMeVijuu"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="Add Me To Your Group 🎉",
-                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
+                text="Help And Commands🤖", callback_data="bot_commands",
             )
         ],
     ]
 )
 
 home_text_pm = (
-        f"Hey there! My name is {BOT_NAME}. I can manage your "
-        + "group with lots of useful features, feel free to "
-        + "add me to your group."
+        photo=f"{START_PIC}",
+        caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
+Hey 👋🏻 {mention}
+
+My Name Is {BOT_NAME} ..
+
+➭ A Smart 🤖 RoBot With Many Amazing Features...
+➭ I Can Manage Your Group 🤓
+➭ So what are you waiting for?
+Add me in your groups and give me full rights to make me function well.💞
+━━━━━━━━━━━━━━━━━━━━━━━━**""",
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -154,7 +158,7 @@ keyboard = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                url="https://t.me/itsMyBi0",
             ),
         ],
         [
@@ -162,7 +166,7 @@ keyboard = InlineKeyboardMarkup(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(text="Support 👨", url="https://t.me/ItsMyBi0"),
         ],
     ]
 )
@@ -261,7 +265,7 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name}, My name is {bot_name}.
+        """Hello {mention}, My name is {bot_name}.
 I'm a group management bot with some useful features.
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
